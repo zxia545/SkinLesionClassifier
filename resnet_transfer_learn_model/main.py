@@ -75,7 +75,7 @@ num_classes = len(class_names)
 print(f"Classes: {class_names}")
 
 # Device configuration
-device = torch.device("cuda:7" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f'Using device: {device}')
 
 # Model Definition using Transfer Learning
@@ -88,7 +88,7 @@ model = model.to(device)
 
 # Loss function and optimizer
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.0001)
+optimizer = optim.Adam(model.parameters(), lr=1e-5)
 
 # Learning rate scheduler
 from torch.optim import lr_scheduler
@@ -234,6 +234,11 @@ model, train_loss_history, train_acc_history, val_loss_history, val_acc_history 
 
 # Evaluating the model
 all_preds, all_labels = evaluate_model(model, test_loader, criterion)
+
+
+# Save the model
+torch.save(model.state_dict(), 'resnet_transfer_learning_model.pth')
+print('Model saved to resnet_transfer_learning_model.pth')
 
 # Plotting training and validation loss and accuracy
 def plot_training_history(train_loss, val_loss, train_acc, val_acc):
