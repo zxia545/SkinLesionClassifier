@@ -4,8 +4,8 @@ import shutil
 import random
 
 # Paths to the dataset and CSV file
-dataset_dir = '/home/zxia545/_Code/UT-Austin_projects/csml_final_project/dataset/ham10000/Labeled_Data'
-output_base_dir = '/home/zxia545/_Code/UT-Austin_projects/csml_final_project/code_repo/split_data'
+dataset_dir = '/data/huzhengyu/github_repo/tony_csml/csml-final-project/dataset/Labeled Data'
+output_base_dir = '/data/huzhengyu/github_repo/tony_csml/csml-final-project/split_data'
 
 # Create output directories for train, validation, and test splits
 splits = ['train', 'validation', 'test']
