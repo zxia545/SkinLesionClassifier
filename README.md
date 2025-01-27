@@ -1,74 +1,57 @@
-# Data Augmentation and Visualization Pipeline
+# Skin Lesion Classification: Data Augmentation and Visualization Pipeline  
 
-This repository provides tools for preprocessing, splitting, augmenting, and visualizing image datasets for machine learning tasks.
+This repository provides tools for preprocessing, splitting, augmenting, and visualizing image datasets for machine learning tasks, specifically designed for skin lesion classification using the HAM10000 dataset.  
 
-## Features
+## Features  
+- **Dataset Splitting:** Automatically splits datasets into training, validation, and test sets with proportional representation by class.  
+- **Image Augmentation:** Enhances dataset diversity with transformations such as rotation, flipping, cropping, color jitter, and noise addition.  
+- **Visualization:** Generates bar charts, heatmaps, and sample image displays for dataset analysis.  
 
-- **Dataset Splitting**: Automatically splits datasets into training, validation, and test sets.
-- **Image Augmentation**: Applies transformations like rotation, flipping, cropping, color jitter, and noise addition.
-- **Visualization**: Generates bar charts, heatmaps, and sample image displays for dataset analysis.
+## File Overview  
+- `augmentation_to_image.py`: Script for applying image augmentation to the training set and saving the results.  
+- `dataset_visualization.ipynb`: Notebook for dataset preprocessing, splitting, visualization, and sample image display.  
+- `.gitignore`: Excludes unnecessary files and directories from version control.  
 
-## File Overview
+## How to Use  
 
-- `augmentation_to_image.py`: Script for augmenting images in the training set and saving the results.
-- `dataset_visualization.ipynb`: Notebook for splitting datasets, generating visualizations, and displaying sample images.
-- `.gitignore`: Specifies files and directories to exclude from version control.
+### 0. Clone the Repository and Download the Dataset  
+- Clone the repository:  
+  ```bash  
+  git clone https://github.com/zxia545/csml-final-project  
+  ```  
+- Download the HAM10000 dataset from [Kaggle](https://www.kaggle.com/datasets/rauf41/skin-cancer-image-dataset).  
 
-## How to Use
+### 1. Dataset Splitting  
+- Organize your dataset into `dataset/` with subfolders for each class.  
+- Run `dataset_visualization.ipynb` to split the dataset into training, validation, and test sets.  
 
-### 0. Download Dataset
+### 2. Image Augmentation  
+- Augment the training data by running:  
+  ```bash  
+  python augmentation_to_image.py  
+  ```  
+- Augmented images will be saved in `split_data/augmented_train/`.  
 
-Use the `dataset_visualization.ipynb` notebook to:
+### 3. Visualization  
+- Use `dataset_visualization.ipynb` to:  
+  - Generate bar charts and heatmaps for class distribution.  
+  - Display random sample images from training, validation, and test sets.  
 
-* Download dataset
+### 4. Model Training  
+- Use `main.py` (if present) to train models. Adjust dataset paths in the script to match your directory structure.  
 
-### 1. Dataset Splitting
+### 5. Evaluation  
+- Evaluate models using `load_and_test.py`, ensuring it aligns with your trained model and test dataset structure.  
 
-1. Place your dataset in the `dataset/` folder, structured with subfolders for each class.
-2. Run `dataset_visualization.ipynb` to split the dataset into `train`, `validation`, and `test` sets.
+## Dependencies  
+Install required Python libraries using:  
+```bash  
+pip install -r requirements.txt  
+```  
 
-### 2. Image Augmentation
-
-Run the `augmentation_to_image.py` script:
-
-```bash
-python augmentation_to_image.py
+## Directory Structure  
 ```
-
-Augmented images will be saved in `split_data/augmented_train`.
-
-### 3. Visualization
-
-Use the `dataset_visualization.ipynb` notebook to:
-
-- Generate bar charts and heatmaps for dataset distribution.
-- Display random sample images from each dataset split.
-
-### 4. Training
-
-For folders containing `main.py`, use the script to train models and generate outputs.
-
-- **Note**: Ensure the dataset paths in `main.py` are adjusted according to your directory structure before running.
-
-### 5. Evaluation
-
-To evaluate the results:
-
-1. Run the `load_and_test.py` script in the respective folders.
-2. This script loads the trained model and evaluates its performance on the test dataset.
-
-## Dependencies
-
-Install the required Python libraries with:
-
-```bash
-pip install -r requirements.txt
-```
-
-## Directory Structure
-
-```
-code_repo/
+csml-final-project/
 ├── augmentation_to_image.py
 ├── dataset_visualization.ipynb
 ├── .gitignore
@@ -80,13 +63,15 @@ code_repo/
 │   ├── augmented_train/
 └── dataset/
     └── Labeled Data/
-```
+```  
 
-## Notes
+## Notes  
+- Modify paths in scripts as necessary for your environment.  
+- Ensure datasets are organized with subfolders for each class.  
+- For vision-language model experiments (CLIP, BLIP), include appropriate pre-trained weights and scripts.  
 
-- Modify directory paths in scripts as needed for your environment.
-- Ensure the dataset folder is organized with subfolders for each class.
+## License  
+This project is licensed under the MIT License.  
 
-## License
-
-This project is licensed under the MIT License.
+## Acknowledgments  
+This repository supports the research in *"Exploring Vision-Language and Deep Learning Models for Skin Cancer Classification"* by Zheyuan Xiao, utilizing HAM10000 for experimentation with methods like Random Forest, ResNet, Custom CNNs, and vision-language models (CLIP, BLIP).  
