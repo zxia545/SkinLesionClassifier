@@ -2,6 +2,8 @@
 
 This repository, [Skin Lesion Classifier](https://github.com/zxia545/SkinLesionClassifier.git), provides tools for preprocessing, splitting, augmenting, and visualizing image datasets for machine learning tasks, specifically designed for skin lesion classification using the HAM10000 dataset.  
 
+![image](https://github.com/user-attachments/assets/03551ec2-95e8-4c87-837d-55be428c46e1)
+
 ## Features  
 - **Dataset Splitting:** Automatically splits datasets into training, validation, and test sets with proportional representation by class.  
 - **Image Augmentation:** Enhances dataset diversity with transformations such as rotation, flipping, cropping, color jitter, and noise addition.  
