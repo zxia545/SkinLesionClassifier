@@ -1,6 +1,6 @@
-# Skin Lesion Classification: Data Augmentation and Visualization Pipeline  
+# Skin Lesion Classifier  
 
-This repository provides tools for preprocessing, splitting, augmenting, and visualizing image datasets for machine learning tasks, specifically designed for skin lesion classification using the HAM10000 dataset.  
+This repository, [Skin Lesion Classifier](https://github.com/zxia545/SkinLesionClassifier.git), provides tools for preprocessing, splitting, augmenting, and visualizing image datasets for machine learning tasks, specifically designed for skin lesion classification using the HAM10000 dataset.  
 
 ## Features  
 - **Dataset Splitting:** Automatically splits datasets into training, validation, and test sets with proportional representation by class.  
@@ -17,7 +17,7 @@ This repository provides tools for preprocessing, splitting, augmenting, and vis
 ### 0. Clone the Repository and Download the Dataset  
 - Clone the repository:  
   ```bash  
-  git clone https://github.com/zxia545/csml-final-project  
+  git clone https://github.com/zxia545/SkinLesionClassifier.git  
   ```  
 - Download the HAM10000 dataset from [Kaggle](https://www.kaggle.com/datasets/rauf41/skin-cancer-image-dataset).  
 
@@ -51,7 +51,7 @@ pip install -r requirements.txt
 
 ## Directory Structure  
 ```
-csml-final-project/
+SkinLesionClassifier/
 ├── augmentation_to_image.py
 ├── dataset_visualization.ipynb
 ├── .gitignore
